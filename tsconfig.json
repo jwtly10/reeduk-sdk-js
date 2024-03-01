@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "allowJs": true,
+        "declaration": true,
+        "emitDeclarationOnly": true,
+        "outDir": "./types",
+        "baseUrl": ".",
+        "paths": {
+            "*": ["*", "types/*"]
+        }
+    },
+    "include": ["src/**/*"]
+}
+
