@@ -2,7 +2,7 @@ import utils from '../src/utils'
 
 // @ts-check
 describe('Utility functions', () => {
-    test('can parse job parameters', () => {
+    test('checks can parse job parameters', () => {
         const params = {
             keywords: 'developer',
             resultsToTake: 50,

@@ -42,9 +42,29 @@ describe('Reed api client', () => {
             c.newJobSearch(testParams2).catch((error) => {
                 expect(error.message).toBeDefined()
                 expect(error.message).toBe(
-                    'Request failed with status code 401',
+                    'API request failed with status 401: ',
                 )
             })
+        })
+
+        test('checks we can get job details', async () => {
+            const testParams3 = {
+                keywords: ['developer'],
+                resultsToTake: 1,
+            }
+            let reed = new Client(apiKey)
+            let jobs = await reed.newJobSearch(testParams3)
+
+            let iJob = jobs.results[0]
+            await reed
+                .getJobDetails(iJob.jobId)
+                .catch((error) => {
+                    console.log('Error getting job details: ', error)
+                })
+                .then((jobDetails) => {
+                    expect(jobDetails).toBeDefined()
+                    expect(jobDetails.jobId).toEqual(iJob.jobId)
+                })
         })
     }
 })

@@ -5,9 +5,6 @@ import utils from './utils.js'
 import { API_URL, API_VERSION } from './constants.js'
 const BASE_URL = `${API_URL}${API_VERSION}`
 
-/**
- * @property {string} apiKey - The API
- */
 export default class Client {
     /**
      * @param {string} apiKey - The API key to use for requests
@@ -58,7 +55,39 @@ export default class Client {
         } catch (error) {
             if (error.response) {
                 throw new Error(
-                    `API request failed with status ${error.response.status}: ${error.response.data.message}`,
+                    `API request failed with status ${error.response.status}: ${error.response.data}`,
+                )
+            } else if (error.request) {
+                throw new Error(
+                    'The request was made but no response was received',
+                )
+            } else {
+                throw new Error(
+                    'Error setting up the request: ' + error.message,
+                )
+            }
+        }
+    }
+
+    /**
+     * Get the details of a job by its id
+     * @param {number} jobId - The id of the job to fetch
+     * @returns {Promise<import('./types.js').Job>}
+     */
+    async getJobDetails(jobId) {
+        const jobDetailsUrl = `${BASE_URL}/jobs/${jobId}`
+        const token = Buffer.from(`${this.apiKey}:`, 'utf8').toString('base64')
+        const headers = {
+            Authorization: `Basic ${token}`,
+        }
+
+        try {
+            const response = await axios.get(jobDetailsUrl, { headers })
+            return Promise.resolve(response.data)
+        } catch (error) {
+            if (error.response) {
+                throw new Error(
+                    `API request failed with status ${error.response.status}: ${error.response.data}`,
                 )
             } else if (error.request) {
                 throw new Error(
