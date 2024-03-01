@@ -1,5 +1,9 @@
 {
     "compilerOptions": {
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "target": "es2017",
+        "module": "CommonJS",
         "allowJs": true,
         "declaration": true,
         "emitDeclarationOnly": true,

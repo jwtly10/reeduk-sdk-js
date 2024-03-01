@@ -1,10 +1,11 @@
 {
   "name": "reeduk-sdk-js",
-  "version": "0.0.2",
+  "version": "0.0.6",
   "description": "Reed.co.uk API SDK for Node.js",
   "scripts": {
     "test": "jest"
   },
+  "main": "./index.js",
   "types": "./types/index.d.ts",
   "keywords": [],
   "author": "jwtly10",

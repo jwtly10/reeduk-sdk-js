@@ -10,7 +10,8 @@ function constructUrlWithQueryParams(baseUrl, params) {
     )
 
     const queryStrings = filteredParams.map(
-        ([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`,
+        ([key, value]) =>
+            `${encodeURIComponent(key)}=${encodeURIComponent(value)}`,
     )
 
     const queryString =
@@ -19,4 +20,4 @@ function constructUrlWithQueryParams(baseUrl, params) {
     return `${baseUrl}${queryString}`
 }
 
-export default { constructUrlWithQueryParams }
+module.exports = { constructUrlWithQueryParams }

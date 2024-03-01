@@ -1,4 +1,4 @@
-import utils from '../src/utils'
+const utils = require('../src/utils')
 
 // @ts-check
 describe('Utility functions', () => {

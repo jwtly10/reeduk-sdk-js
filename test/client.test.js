@@ -1,5 +1,5 @@
 // @ts-check
-import Client from '../src/client.js'
+const Client = require('../src/client.js')
 
 describe('Reed api client', () => {
     const apiKey = process.env.REED_API_KEY

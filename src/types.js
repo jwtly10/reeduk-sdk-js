@@ -65,4 +65,4 @@
  * @property {number} totalResults
  */
 
-export default { JobSearchParams, Job, JobSearchResponse }
+module.exports = { JobSearchParams, Job, JobSearchResponse }

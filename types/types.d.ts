@@ -1,9 +1,3 @@
-declare namespace _default {
-    export { JobSearchParams };
-    export { Job };
-    export { JobSearchResponse };
-}
-export default _default;
 export type JobSearchParams = {
     employerId: string;
     employerProfileId: string;

@@ -1,11 +1,12 @@
 // @ts-check
-import axios from 'axios'
-import utils from './utils.js'
+const axios = require('axios').default
+const utils = require('./utils.js')
 
-import { API_URL, API_VERSION } from './constants.js'
+const { API_URL, API_VERSION } = require('./constants.js')
+
 const BASE_URL = `${API_URL}${API_VERSION}`
 
-export default class Client {
+class Client {
     /**
      * @param {string} apiKey - The API key to use for requests
      */
@@ -101,3 +102,5 @@ export default class Client {
         }
     }
 }
+
+module.exports = Client

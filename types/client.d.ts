@@ -1,4 +1,5 @@
-export default class Client {
+export = Client;
+declare class Client {
     /**
      * @param {string} apiKey - The API key to use for requests
      */
