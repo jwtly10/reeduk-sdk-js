@@ -24,7 +24,7 @@ npm install reeduk-sdk-js
 First, import the Client class from the SDK:
 
 ```javascript
-const Client = require('reeduk-sdk-js').Client;
+import Client from 'reeduk-sdk-js'
 ```
 
 ## Initializing the Client
@@ -51,6 +51,7 @@ client.newJobSearch(searchParams).then(response => {
   console.error(error.message);
 });
 ```
+Search parameters can be found here https://github.com/jwtly10/reeduk-sdk-js/blob/a5f1278d41d4494e29dd6689941f1aab6c4d69c5/src/types.js
 
 ## Paginating Through Job Results
 For paginating through job results, you can use the getAllJobsIter generator function:

@@ -1,6 +1,6 @@
 {
   "name": "reeduk-sdk-js",
-  "version": "0.0.8",
+  "version": "1.0.2",
   "description": "Reed.co.uk API SDK for Node.js",
   "scripts": {
     "test": "jest"
