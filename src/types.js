@@ -1,25 +1,4 @@
 /**
- * @typedef {Object} JobSearchParams
- * @property {string} employerId
- * @property {string} employerProfileId
- * @property {string[]} keywords
- * @property {string} locationName
- * @property {number} distanceFromLocation
- * @property {boolean} permanent
- * @property {boolean} contract
- * @property {boolean} temp
- * @property {boolean} partTime
- * @property {boolean} fullTime
- * @property {number} minimumSalary
- * @property {number} maximumSalary
- * @property {boolean} postedByRecruitmentAgency
- * @property {boolean} postedByDirectEmployer
- * @property {boolean} graduate
- * @property {number} resultsToTake
- * @property {number} resultsToSkip
- */
-
-/**
  * @typedef {Object} Job
  * @property {number} jobId
  * @property {number} employerId
